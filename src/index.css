@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #fff5f9 0%, #ffe8f2 35%, #ffd4e5 70%, #fff0f6 100%);
+    color: #4a2838;
+    position: relative;
+  }
+}
+
+.font-cursive {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-royal {
+  font-family: 'Cinzel', serif;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Ambient glow orbs */
+.blur-orb-1 {
+  position: fixed;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  filter: blur(130px);
+  background: radial-gradient(circle, #ffb3d1 0%, rgba(255, 179, 209, 0) 70%);
+  opacity: 0.55;
+  top: -150px;
+  left: -120px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blur-orb-2 {
+  position: fixed;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  filter: blur(140px);
+  background: radial-gradient(circle, #ffcfe4 0%, rgba(255, 207, 228, 0) 70%);
+  opacity: 0.6;
+  bottom: -160px;
+  right: -120px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blur-orb-3 {
+  position: fixed;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(110px);
+  background: radial-gradient(circle, #ffffff 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0.7;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Sparkle animation */
+@keyframes sparkleAnim {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.6);
+    box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.9);
+  }
+}
+
+.sparkle-dot {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none;
+  animation: sparkleAnim 3.2s infinite ease-in-out;
+}
+
+/* Floating lily & petal animation */
+@keyframes floatLily {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-920px) rotate(420deg) scale(1.15);
+    opacity: 0;
+  }
+}
+
+.floating-flower {
+  position: fixed;
+  pointer-events: none;
+  z-index: 20;
+  animation: floatLily 8.5s linear forwards;
+}
+
+/* Burst flowers animation from envelope */
+@keyframes burstFlowerAnim {
+  0% {
+    transform: translate(0, 0) scale(0.1) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1.4) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.burst-flower-item {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  animation: burstFlowerAnim 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 3D Envelope Styles */
+.envelope-perspective {
+  perspective: 1000px;
+}
+
+.envelope-flap {
+  transform-origin: top;
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  clip-path: polygon(0 0, 100% 0, 50% 62%);
+}
+
+.envelope-flap.open {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+/* Royal wax seal */
+.wax-seal {
+  background: radial-gradient(circle at 35% 35%, #ff8db3, #e6457a 70%, #b81c4e 100%);
+  box-shadow: 0 4px 14px rgba(184, 28, 78, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.5), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Glassmorphic White & Pink card */
+.royal-glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 215, 230, 0.85);
+  box-shadow: 0 20px 50px rgba(235, 140, 180, 0.25), 0 4px 12px rgba(255, 255, 255, 0.8) inset;
+}
+
+.royal-border-stamp {
+  border: 2px dashed rgba(230, 90, 140, 0.35);
+}
+
+/* Smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 235, 243, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(244, 114, 168, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 114, 168, 0.7);
+}

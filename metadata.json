@@ -1,0 +1,6 @@
+{
+  "name": "Apology to Keysha",
+  "description": "Surat permohonan maaf tulus untuk Keysha bertema bunga lily dan istana kerajaan London dengan alunan lagu Young and Beautiful dan palet pink putih elegan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

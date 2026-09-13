@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apology to Keysha</title>
+  <meta name="description" content="Surat permohonan maaf tulus untuk Keysha bertema bunga lily dan istana kerajaan London dengan alunan lagu Young and Beautiful dan palet pink putih elegan." />
+  <meta property="og:title" content="Apology to Keysha" />
+  <meta property="og:description" content="Surat permohonan maaf tulus untuk Keysha bertema bunga lily dan istana kerajaan London dengan alunan lagu Young and Beautiful dan palet pink putih elegan." />
+
+  <!-- Google Fonts: Great Vibes (Cursive), Cinzel (Royal Serif), Poppins (Clean Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Great+Vibes&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       RESET & BASE STYLING (Pink & White Royal Aesthetic)
+       ============================================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --bg-primary: #fff2f7;
+      --bg-secondary: #ffe6f0;
+      --bg-card: rgba(255, 255, 255, 0.92);
+      --pink-soft: #ffaecd;
+      --pink-primary: #f472b6;
+      --pink-deep: #db2777;
+      --pink-dark: #831843;
+      --pink-text: #4c0519;
+      --gold-royal: #d97706;
+      --gold-light: #fef3c7;
+      --shadow-royal: 0 20px 45px -10px rgba(219, 39, 119, 0.18), 0 10px 20px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: radial-gradient(circle at 50% 0%, #ffffff 0%, #fff0f6 40%, #ffe4ee 100%);
+      color: var(--pink-text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px 40px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ============================================================
+       AMBIENT GLOW ORBS & SPARKLES
+       ============================================================ */
+    .ambient-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.65;
+      animation: floatOrb 18s ease-in-out infinite alternate;
+    }
+
+    .orb-1 {
+      width: 320px;
+      height: 320px;
+      background: rgba(255, 182, 217, 0.5);
+      top: -80px;
+      left: -80px;
+    }
+
+    .orb-2 {
+      width: 360px;
+      height: 360px;
+      background: rgba(254, 215, 235, 0.55);
+      bottom: -100px;
+      right: -80px;
+      animation-delay: -9s;
+    }
+
+    .orb-3 {
+      width: 250px;
+      height: 250px;
+      background: rgba(255, 230, 240, 0.6);
+      top: 40%;
+      left: 60%;
+      animation-delay: -5s;
+    }
+
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -40px) scale(1.08); }
+      100% { transform: translate(-20px, 30px) scale(0.95); }
+    }
+
+    /* Twinkling star sparkles */
+    .sparkle-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .sparkle-dot {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(255, 182, 217, 0.8), 0 0 12px white;
+      animation: twinkle linear infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.15; transform: scale(0.6); }
+      50% { opacity: 0.95; transform: scale(1.3); }
+    }
+
+    /* Floating lily flower symbols */
+    .flower-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .falling-flower {
+      position: absolute;
+      font-size: 20px;
+      opacity: 0.75;
+      user-select: none;
+      animation: fallPetal linear infinite;
+    }
+
+    @keyframes fallPetal {
+      0% {
+        transform: translateY(-50px) rotate(0deg) translateX(0);
+        opacity: 0;
+      }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% {
+        transform: translateY(105vh) rotate(360deg) translateX(40px);
+        opacity: 0;
+      }
+    }
+
+    /* Burst animation elements */
+    .burst-flower {
+      position: fixed;
+      pointer-events: none;
+      z-index: 999;
+      user-select: none;
+      animation: burstFly 1.6s cubic-bezier(0.12, 0.8, 0.32, 1) forwards;
+    }
+
+    @keyframes burstFly {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.4) rotate(0deg);
+      }
+      80% {
+        opacity: 0.9;
+      }
+      100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.2) rotate(var(--rot));
+      }
+    }
+
+    /* ============================================================
+       TOP HEADER (Title & Royal Monogram)
+       ============================================================ */
+    .app-wrapper {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .royal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(244, 114, 182, 0.35);
+      border-radius: 9999px;
+      padding: 6px 16px;
+      box-shadow: 0 4px 14px rgba(219, 39, 119, 0.08);
+      margin-bottom: 22px;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .royal-badge span {
+      font-family: 'Cinzel', serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--pink-deep);
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       ENVELOPE COMPONENT (3D Flip & Wax Seal)
+       ============================================================ */
+    .envelope-box {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      animation: fadeInUp 0.9s ease-out;
+    }
+
+    .envelope-box:hover {
+      transform: translateY(-4px);
+    }
+
+    .envelope {
+      position: relative;
+      width: 320px;
+      height: 215px;
+      background: linear-gradient(145deg, #ffb3ce, #ff94bb);
+      border-radius: 0 0 20px 20px;
+      box-shadow: var(--shadow-royal), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    @media (min-width: 480px) {
+      .envelope {
+        width: 380px;
+        height: 245px;
+      }
+    }
+
+    /* Envelope Top Flap */
+    .envelope-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 160px solid transparent;
+      border-right: 160px solid transparent;
+      border-top: 120px solid #ff9dbf;
+      transform-origin: top;
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), border-top-color 0.4s;
+      z-index: 5;
+      filter: drop-shadow(0 4px 6px rgba(180, 20, 80, 0.18));
+    }
+
+    @media (min-width: 480px) {
+      .envelope-flap {
+        border-left-width: 190px;
+        border-right-width: 190px;
+        border-top-width: 140px;
+      }
+    }
+
+    .envelope.open .envelope-flap {
+      transform: rotateX(180deg);
+      border-top-color: #ffb8d2;
+      z-index: 1;
+    }
+
+    /* Inside Lining of Envelope */
+    .envelope-lining {
+      position: absolute;
+      inset: 8px 8px 8px 8px;
+      background: linear-gradient(to bottom, #ffffff, #fff5f9);
+      border-radius: 0 0 14px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed rgba(244, 114, 182, 0.35);
+      z-index: 2;
+    }
+
+    .lining-motif {
+      font-size: 52px;
+      opacity: 0.16;
+      user-select: none;
+    }
+
+    .lining-royal {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--pink-deep);
+      opacity: 0.25;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    /* Peeking letter sheet inside */
+    .envelope-paper-peek {
+      position: absolute;
+      width: 86%;
+      height: 60px;
+      top: 10px;
+      background: white;
+      border-radius: 8px 8px 0 0;
+      border: 1px solid rgba(244, 114, 182, 0.2);
+      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      transition: transform 0.6s ease;
+    }
+
+    .envelope.open .envelope-paper-peek {
+      transform: translateY(-30px);
+    }
+
+    .envelope-paper-peek span {
+      font-family: 'Great Vibes', cursive;
+      font-size: 20px;
+      color: var(--pink-deep);
+    }
+
+    /* Wax Seal Button */
+    .wax-seal {
+      position: absolute;
+      top: 105px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #ff4d8d, #be123c);
+      box-shadow: 0 6px 16px rgba(190, 18, 60, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 6;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    @media (min-width: 480px) {
+      .wax-seal {
+        top: 122px;
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+    .wax-seal:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 22px rgba(190, 18, 60, 0.55);
+    }
+
+    .wax-seal:active {
+      transform: scale(0.95);
+    }
+
+    .wax-seal-heart {
+      font-size: 26px;
+      color: white;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      animation: pulseHeart 1.6s ease-in-out infinite;
+    }
+
+    @keyframes pulseHeart {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.16); }
+    }
+
+    .envelope-hint {
+      margin-top: 24px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--pink-deep);
+      background: rgba(255, 255, 255, 0.8);
+      padding: 7px 18px;
+      border-radius: 9999px;
+      border: 1px solid rgba(244, 114, 182, 0.3);
+      box-shadow: 0 2px 8px rgba(219, 39, 119, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ============================================================
+       MAIN LETTER CARD (Clean White & Pink, Pure Typography)
+       ============================================================ */
+    .card-container {
+      width: 100%;
+      max-width: 580px;
+      display: none;
+      animation: slideUpFade 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .card-container.visible {
+      display: block;
+    }
+
+    .card-top-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding: 0 4px;
+    }
+
+    .card-top-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      border: 1px solid rgba(244, 114, 182, 0.3);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--pink-deep);
+      font-family: 'Cinzel', serif;
+    }
+
+    .btn-close-letter {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(244, 114, 182, 0.3);
+      color: var(--pink-deep);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 11.5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-close-letter:hover {
+      background: white;
+      transform: scale(1.04);
+    }
+
+    /* Royal Glass Letter Card */
+    .letter-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 247, 251, 0.94) 100%);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      padding: 32px 24px;
+      border: 2px solid rgba(244, 114, 182, 0.35);
+      box-shadow: 0 25px 60px -15px rgba(219, 39, 119, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+      position: relative;
+    }
+
+    @media (min-width: 480px) {
+      .letter-card {
+        padding: 40px 36px;
+      }
+    }
+
+    /* Royal Postmark Header (Pure CSS & Typography) */
+    .stamp-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(244, 114, 182, 0.25);
+      padding-bottom: 16px;
+      margin-bottom: 22px;
+    }
+
+    .stamp-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .royal-stamp-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      border: 2px dashed rgba(244, 114, 182, 0.8);
+      background: linear-gradient(135deg, #fff0f5, #ffe4ee);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(219, 39, 119, 0.08);
+      user-select: none;
+    }
+
+    .royal-stamp-box .stamp-icon {
+      font-size: 16px;
+    }
+
+    .royal-stamp-box .stamp-text {
+      font-family: 'Cinzel', serif;
+      font-size: 8.5px;
+      font-weight: 800;
+      color: var(--pink-deep);
+      letter-spacing: 0.05em;
+    }
+
+    .stamp-info h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--pink-deep);
+      text-transform: uppercase;
+    }
+
+    .stamp-info p {
+      font-size: 10px;
+      color: #9d174d;
+      margin-top: 1px;
+    }
+
+    .stamp-right {
+      text-align: right;
+    }
+
+    .stamp-date {
+      font-size: 10px;
+      font-weight: 600;
+      color: #be185d;
+      background: rgba(255, 230, 240, 0.6);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      border: 1px solid rgba(244, 114, 182, 0.2);
+    }
+
+    /* Letter Main Title */
+    .letter-title-section {
+      text-align: center;
+      margin: 12px 0 20px;
+    }
+
+    .letter-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 42px;
+      color: #9d174d;
+      line-height: 1.15;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    }
+
+    @media (min-width: 480px) {
+      .letter-title {
+        font-size: 52px;
+      }
+    }
+
+    .letter-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .divider-line {
+      height: 1px;
+      width: 45px;
+      background: linear-gradient(to right, transparent, rgba(244, 114, 182, 0.5));
+    }
+
+    .divider-line.right {
+      background: linear-gradient(to left, transparent, rgba(244, 114, 182, 0.5));
+    }
+
+    .divider-icon {
+      font-size: 14px;
+      color: var(--pink-primary);
+    }
+
+    /* Message Body */
+    .message-container {
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 20px;
+      padding: 22px 20px;
+      border: 1px solid rgba(244, 114, 182, 0.25);
+      box-shadow: inset 0 2px 6px rgba(244, 114, 182, 0.05);
+      margin: 20px 0;
+    }
+
+    .message-text {
+      font-size: 13.5px;
+      line-height: 1.95;
+      color: #3b0718;
+      font-weight: 400;
+      white-space: pre-line;
+      text-align: left;
+    }
+
+    @media (min-width: 480px) {
+      .message-text {
+        font-size: 14.5px;
+      }
+    }
+
+    /* Royal Poetic Note */
+    .royal-poetic-note {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(244, 114, 182, 0.25);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .poetic-icon {
+      font-size: 20px;
+      user-select: none;
+    }
+
+    .poetic-text {
+      font-size: 12px;
+      font-style: italic;
+      color: #831843;
+      line-height: 1.65;
+    }
+
+    /* Signature */
+    .letter-signature {
+      text-align: right;
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+    }
+
+    .signature-text {
+      font-family: 'Great Vibes', cursive;
+      font-size: 22px;
+      color: #831843;
+    }
+
+    .signature-heart {
+      font-size: 16px;
+      color: #e11d48;
+    }
+
+    /* ============================================================
+       ACTION TOOLBAR (Music, Lily Burst, Copy, Reply)
+       ============================================================ */
+    .action-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(244, 114, 182, 0.35);
+      color: #831843;
+      padding: 9px 18px;
+      border-radius: 9999px;
+      font-size: 12.5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 8px rgba(219, 39, 119, 0.08);
+      user-select: none;
+    }
+
+    .btn-action:hover {
+      background: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(219, 39, 119, 0.16);
+    }
+
+    .btn-action:active {
+      transform: translateY(0);
+    }
+
+    /* Primary highlight action */
+    .btn-action-primary {
+      background: linear-gradient(135deg, #f43f5e, #ec4899);
+      color: white;
+      border: none;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(236, 72, 153, 0.35);
+    }
+
+    .btn-action-primary:hover {
+      background: linear-gradient(135deg, #e11d48, #db2777);
+      color: white;
+      box-shadow: 0 6px 18px rgba(236, 72, 153, 0.45);
+    }
+
+    /* ============================================================
+       FLOATING TOP MUSIC PLAYER (Always visible on all screens)
+       ============================================================ */
+    .floating-music-bar {
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      width: calc(100% - 28px);
+      max-width: 450px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1.5px solid rgba(244, 114, 182, 0.4);
+      border-radius: 9999px;
+      padding: 7px 14px 7px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: 0 10px 30px rgba(219, 39, 119, 0.15), 0 2px 8px rgba(0, 0, 0, 0.04);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+    }
+
+    .floating-music-bar:hover {
+      background: #ffffff;
+      transform: translateX(-50%) translateY(-2px);
+      box-shadow: 0 14px 34px rgba(219, 39, 119, 0.22);
+      border-color: rgba(236, 72, 153, 0.7);
+    }
+
+    .music-disc-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fdf2f8, #fce7f3);
+      border: 1px solid rgba(244, 114, 182, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(219, 39, 119, 0.12);
+      transition: transform 0.3s ease;
+    }
+
+    .floating-music-bar.music-playing .music-disc-icon {
+      animation: spinDisc 3s linear infinite;
+    }
+
+    @keyframes spinDisc {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .music-meta {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      min-width: 0;
+    }
+
+    .music-song-title {
+      font-family: 'Cinzel', serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #9d174d;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      letter-spacing: 0.02em;
+    }
+
+    .music-artist-name {
+      font-size: 10.5px;
+      color: #be185d;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .floating-music-btn {
+      background: linear-gradient(135deg, #f43f5e, #ec4899);
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(236, 72, 153, 0.3);
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .floating-music-btn:hover {
+      transform: scale(1.04);
+      background: linear-gradient(135deg, #e11d48, #db2777);
+      box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4);
+    }
+
+    /* Card Bottom Music Player Component */
+    .music-widget {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(244, 114, 182, 0.35);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      box-shadow: 0 2px 8px rgba(219, 39, 119, 0.08);
+      cursor: pointer;
+    }
+
+    .music-play-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f43f5e, #ec4899);
+      border: none;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 11px;
+      transition: transform 0.2s;
+    }
+
+    .music-play-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .music-wave {
+      display: flex;
+      align-items: center;
+      gap: 2.5px;
+      height: 14px;
+    }
+
+    .wave-bar {
+      width: 2.5px;
+      background: #f43f5e;
+      border-radius: 2px;
+      height: 4px;
+      transition: height 0.2s;
+    }
+
+    .music-playing .wave-bar:nth-child(1) { animation: wave 0.8s ease-in-out infinite alternate; }
+    .music-playing .wave-bar:nth-child(2) { animation: wave 0.6s ease-in-out infinite alternate 0.2s; }
+    .music-playing .wave-bar:nth-child(3) { animation: wave 0.9s ease-in-out infinite alternate 0.4s; }
+
+    @keyframes wave {
+      0% { height: 3px; }
+      100% { height: 13px; }
+    }
+
+    .music-label {
+      font-size: 11.5px;
+      font-weight: 500;
+      color: #9d174d;
+    }
+
+    /* Bottom footer pill */
+    .footer-toast {
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    .footer-pill {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(244, 114, 182, 0.25);
+      font-size: 11.5px;
+      color: #9d174d;
+      box-shadow: 0 2px 6px rgba(219, 39, 119, 0.05);
+    }
+
+    /* Toast notification */
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      background: rgba(30, 41, 59, 0.9);
+      color: white;
+      padding: 9px 18px;
+      border-radius: 9999px;
+      font-size: 12px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      z-index: 200;
+      opacity: 0;
+      transform: translateY(15px);
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .toast-msg.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUpFade {
+      from {
+        opacity: 0;
+        transform: translateY(32px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Glowing Orbs -->
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+  <div class="ambient-orb orb-3"></div>
+
+  <!-- Twinkling Sparkles Container -->
+  <div class="sparkle-container" id="sparkleContainer"></div>
+
+  <!-- Falling Lily & Flower Petals Container -->
+  <div class="flower-container" id="flowerContainer"></div>
+
+  <!-- Audio Track (Young and Beautiful by Lana Del Rey) -->
+  <audio id="bgAudio" preload="auto" loop playsinline>
+    <source src="/young_and_beautiful.mp3" type="audio/mpeg">
+    <source src="./young_and_beautiful.mp3" type="audio/mpeg">
+    <source src="young_and_beautiful.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Persistent Floating Music Player Bar (Active across envelope & letter) -->
+  <aside class="floating-music-bar" id="floatingMusicBar" onclick="toggleMusic(event)" title="Klik untuk Putar / Jeda Lagu">
+    <div class="music-disc-icon" id="floatingDiscIcon">
+      <span class="disc-symbol">💿</span>
+    </div>
+    <div class="music-meta">
+      <span class="music-song-title">Young and Beautiful</span>
+      <span class="music-artist-name">Lana Del Rey 🤍</span>
+    </div>
+    <div class="music-wave" id="floatingMusicWave">
+      <div class="wave-bar"></div>
+      <div class="wave-bar"></div>
+      <div class="wave-bar"></div>
+    </div>
+    <button type="button" class="floating-music-btn" id="floatingMusicBtn" onclick="toggleMusic(event)" aria-label="Putar atau Jeda Musik">
+      <span id="floatingMusicIcon">▶</span>
+      <span id="floatingMusicText">Putar Lagu 🎵</span>
+    </button>
+  </aside>
+
+  <!-- Main Application Container -->
+  <div class="app-wrapper">
+
+    <!-- Royal Monogram Header Badge -->
+    <div class="royal-badge">
+      <span style="font-size: 14px;">👑</span>
+      <span>Apology to Keysha &amp; Royal Lily</span>
+      <span style="font-size: 12px;">🌸</span>
+    </div>
+
+    <!-- 1. INTERACTIVE ENVELOPE (Initial State) -->
+    <div class="envelope-box" id="envelopeBox" onclick="openLetter(event)">
+      <div class="envelope" id="envelope">
+        <!-- Top Flap -->
+        <div class="envelope-flap"></div>
+
+        <!-- Inside Lining with Royal Motif -->
+        <div class="envelope-lining">
+          <div class="lining-motif">🌸</div>
+          <div class="lining-royal">Keysha 🤍 London Palace</div>
+        </div>
+
+        <!-- Peeking Letter Paper -->
+        <div class="envelope-paper-peek">
+          <span>Surat untuk Keysha 🤍</span>
+        </div>
+
+        <!-- Wax Seal Button -->
+        <div class="wax-seal" title="Klik untuk Buka Amplop">
+          <span class="wax-seal-heart">🤍</span>
+        </div>
+      </div>
+
+      <!-- Hint below envelope -->
+      <div class="envelope-hint">
+        <span>💌</span>
+        <span>Sentuh amplop untuk membuka surat &amp; putar lagu 🎵</span>
+      </div>
+    </div>
+
+    <!-- 2. MAIN LETTER CARD (Revealed after clicking envelope) -->
+    <div class="card-container" id="cardContainer">
+      
+      <!-- Top Action Bar -->
+      <div class="card-top-toolbar">
+        <div class="card-top-tag">
+          <span>👑</span>
+          <span>Royal Edition for Keysha</span>
+        </div>
+        <button type="button" class="btn-close-letter" onclick="closeLetter()" title="Lipat kembali amplop">
+          <span>↩</span>
+          <span>Tutup Surat</span>
+        </button>
+      </div>
+
+      <!-- The Letter Card (Pure Typography & Royal Border, No Images) -->
+      <div class="letter-card">
+
+        <!-- Royal London Postmark Stamp Header -->
+        <div class="stamp-header">
+          <div class="stamp-left">
+            <div class="royal-stamp-box">
+              <span class="stamp-icon">👑</span>
+              <span class="stamp-text">LILY</span>
+            </div>
+            <div class="stamp-info">
+              <h3>Royal London Post</h3>
+              <p>Special Airmail to Keysha 🤍</p>
+            </div>
+          </div>
+          <div class="stamp-right">
+            <div class="stamp-date">100% Cinta Tulus 🌸</div>
+          </div>
+        </div>
+
+        <!-- Card Title -->
+        <div class="letter-title-section">
+          <h1 class="letter-title">Apology to Keysha 🤍</h1>
+          <div class="letter-divider">
+            <div class="divider-line"></div>
+            <span class="divider-icon">🌸</span>
+            <div class="divider-line right"></div>
+          </div>
+        </div>
+
+        <!-- Apology Love Message -->
+        <div class="message-container">
+          <p class="message-text">sayang, aku mau minta maaf yaa. maaf karena selama ini aku udah sering ngelanggar janji yang aku buat sendiri. aku sadar, aku terlalu sering ngomong bakal berubah, bakal lebih baik, bakal ngelakuin ini itu, tapi nyatanya aku masih ngulangin kesalahan yang sama.
+
+aku ngerti kenapa kamu kecewa sama aku. aku ngerti kenapa kamu jadi susah percaya sama omongan aku. mungkin buat aku janji itu cuma kata-kata yang keluar dari mulut, tapi buat kamu janji itu sesuatu yang kamu percaya dan kamu tunggu buat aku buktiin.
+
+maaf yaa sayang, aku udah bikin kamu berharap dari omongan aku sendiri, tapi malah aku yang ngecewain kamu. aku sadar kalau minta maaf berkali-kali tanpa perubahan itu percuma. dan aku nggak mau terus-terusan jadi orang yang cuma bisa ngomong "aku bakal berubah", tapi nggak pernah bener-bener buktiin.
+
+aku nggak mau nyari alasan atas kesalahan aku. aku salah, dan aku mau ngakuin itu. aku juga nggak mau maksa kamu buat langsung maafin aku atau langsung percaya lagi sama aku. aku ngerti kalau kepercayaan itu nggak bisa balik cuma karena satu kata maaf.
+
+aku cuma mau kamu tahu kalau aku bener-bener nyesel udah bikin kamu kecewa. aku sayang sama kamu, dan aku nggak mau kehilangan kamu karena kesalahan yang sebenarnya bisa aku perbaiki kalau aku mau lebih bertanggung jawab.
+
+mulai sekarang aku mau belajar buat nggak asal ngomong janji. kalau aku belum bisa, aku bakal bilang belum bisa. kalau aku salah, aku bakal berusaha benerin, bukan cuma minta maaf. aku mau buktiin lewat tindakan, bukan cuma lewat kata-kata.
+
+aku tahu mungkin kamu udah capek dengerin janji dari aku. jadi kali ini aku nggak mau banyak janji lagi. aku cuma mau berusaha jadi lebih baik dan ngasih kamu alasan buat percaya lagi sama aku, pelan-pelan.
+
+maafin aku yaa sayang, atas semua omongan aku yang nggak aku buktiin, atas janji yang aku langgar, dan atas rasa kecewa yang aku kasih ke kamu.
+
+aku sayang kamu, Keysha. aku nggak mau hubungan kita cuma dipenuhi kata-kata manis yang nggak ada buktinya. aku mau belajar buat jadi pasangan yang lebih bisa dipercaya.
+
+maaf yaa sayangkuu 🤍</p>
+
+          <!-- Royal London & Lily Poetic Note -->
+          <div class="royal-poetic-note">
+            <span class="poetic-icon">🏰</span>
+            <p class="poetic-text">"Seindah bunga lily merah muda dan megahnya istana kerajaan London, tak ada yang bisa menandingi ketulusan cintaku untukmu. Maafin aku ya cintaku... 🌸"</p>
+          </div>
+        </div>
+
+        <!-- Signature -->
+        <div class="letter-signature">
+          <span class="signature-text">from your boyfieee</span>
+          <span class="signature-heart">♡</span>
+        </div>
+
+      </div>
+
+      <!-- Action Buttons Toolbar -->
+      <div class="action-toolbar">
+        
+        <!-- Background Music Controller -->
+        <div class="music-widget" id="musicWidget">
+          <button type="button" class="music-play-btn" id="musicBtn" onclick="toggleMusic()" title="Putar/Jeda Musik Young &amp; Beautiful">
+            <span id="musicIcon">▶</span>
+          </button>
+          <div class="music-wave" id="musicWave">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+          </div>
+          <span class="music-label" id="musicLabel">Young &amp; Beautiful 🎵</span>
+        </div>
+
+        <!-- Flower Burst Button -->
+        <button type="button" class="btn-action" onclick="burstFlowerPetals(event)">
+          <span>🌸</span>
+          <span>Tabur Lily</span>
+        </button>
+
+        <!-- Copy Message Button -->
+        <button type="button" class="btn-action btn-action-primary" id="copyBtn" onclick="copyLetterText()">
+          <span>📋</span>
+          <span id="copyBtnText">Salin Pesan 🤍</span>
+        </button>
+
+      </div>
+
+      <!-- Sweet Footer Tag -->
+      <div class="footer-toast">
+        <span class="footer-pill">thank you for staying 💗 Keysha &amp; Boyfie</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Small Toast Message -->
+  <div class="toast-msg" id="toastMsg">Pesan tersalin ke clipboard!</div>
+
+  <!-- ============================================================
+       JAVASCRIPT (Audio Engine, Envelope, Particles & Interactions)
+       ============================================================ -->
+  <script>
+    /* ------------------------------------------------------------
+       1. AUDIO CONTROLLER - LANA DEL REY "YOUNG AND BEAUTIFUL"
+       ------------------------------------------------------------ */
+    const audioSrc = '/young_and_beautiful.mp3';
+    let bgAudio = document.getElementById('bgAudio');
+    let isMusicPlaying = false;
+    let audioContext = null;
+    let audioBuffer = null;
+    let bufferSource = null;
+    let isWebAudioPlaying = false;
+
+    // Ensure audio element is configured properly
+    if (bgAudio) {
+      bgAudio.volume = 1.0;
+      bgAudio.loop = true;
+    } else {
+      bgAudio = new Audio(audioSrc);
+      bgAudio.id = 'bgAudio';
+      bgAudio.volume = 1.0;
+      bgAudio.loop = true;
+      document.body.appendChild(bgAudio);
+    }
+
+    // Preload audio array buffer for high-fidelity fallback if HTML5 audio encounters policies
+    function preloadSongBuffer() {
+      try {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!audioContext && AudioContextClass) {
+          audioContext = new AudioContextClass();
+        }
+        fetch(audioSrc)
+          .then(res => {
+            if (!res.ok) throw new Error('Network error');
+            return res.arrayBuffer();
+          })
+          .then(arrayBuffer => {
+            if (audioContext) {
+              audioContext.decodeAudioData(arrayBuffer, (decoded) => {
+                audioBuffer = decoded;
+              });
+            }
+          })
+          .catch(e => {
+            console.warn('Audio prebuffer note:', e);
+          });
+      } catch (err) {
+        console.warn('Web Audio note:', err);
+      }
+    }
+
+    function startBufferPlayback() {
+      if (!audioBuffer) return false;
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!audioContext && AudioContextClass) {
+        audioContext = new AudioContextClass();
+      }
+      if (!audioContext) return false;
+      if (audioContext.state === 'suspended') {
+        audioContext.resume();
+      }
+      if (bufferSource) {
+        try { bufferSource.stop(); } catch(e) {}
+      }
+      bufferSource = audioContext.createBufferSource();
+      bufferSource.buffer = audioBuffer;
+      bufferSource.loop = true;
+      bufferSource.connect(audioContext.destination);
+      bufferSource.start(0);
+      isWebAudioPlaying = true;
+      isMusicPlaying = true;
+      updateMusicUI(true);
+      return true;
+    }
+
+    function playMusic() {
+      // Resume AudioContext if suspended
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!audioContext && AudioContextClass) {
+        audioContext = new AudioContextClass();
+      }
+      if (audioContext && audioContext.state === 'suspended') {
+        audioContext.resume();
+      }
+
+      if (bgAudio) {
+        bgAudio.volume = 1.0;
+        const playPromise = bgAudio.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            isMusicPlaying = true;
+            updateMusicUI(true);
+          }).catch((err) => {
+            console.warn('HTML5 Audio play rejected, falling back to Web Audio buffer:', err);
+            if (!startBufferPlayback()) {
+              // If buffer not decoded yet, load and play
+              fetch(audioSrc)
+                .then(r => r.arrayBuffer())
+                .then(b => audioContext.decodeAudioData(b))
+                .then(decoded => {
+                  audioBuffer = decoded;
+                  startBufferPlayback();
+                })
+                .catch(() => {});
+            }
+          });
+        } else {
+          isMusicPlaying = true;
+          updateMusicUI(true);
+        }
+      } else {
+        startBufferPlayback();
+      }
+    }
+
+    function pauseMusic() {
+      if (bgAudio && !bgAudio.paused) {
+        bgAudio.pause();
+      }
+      if (bufferSource) {
+        try { bufferSource.stop(); } catch(e) {}
+        bufferSource = null;
+      }
+      isWebAudioPlaying = false;
+      isMusicPlaying = false;
+      updateMusicUI(false);
+    }
+
+    function toggleMusic(e) {
+      if (e) e.stopPropagation();
+      if (isMusicPlaying || (bgAudio && !bgAudio.paused) || isWebAudioPlaying) {
+        pauseMusic();
+        showToast('Musik dijeda ⏸️');
+      } else {
+        playMusic();
+        showToast('Memutar Young and Beautiful 🎵');
+      }
+    }
+
+    function updateMusicUI(active) {
+      isMusicPlaying = active;
+
+      // 1. Floating Top Music Bar
+      const floatBar = document.getElementById('floatingMusicBar');
+      const floatIcon = document.getElementById('floatingMusicIcon');
+      const floatText = document.getElementById('floatingMusicText');
+
+      if (floatBar) {
+        if (active) {
+          floatBar.classList.add('music-playing');
+        } else {
+          floatBar.classList.remove('music-playing');
+        }
+      }
+      if (floatIcon) floatIcon.textContent = active ? '❚❚' : '▶';
+      if (floatText) floatText.textContent = active ? 'Jeda Lagu' : 'Putar Lagu 🎵';
+
+      // 2. Letter Card Bottom Toolbar Widget
+      const cardWidget = document.getElementById('musicWidget');
+      const cardIcon = document.getElementById('musicIcon');
+
+      if (cardWidget) {
+        if (active) {
+          cardWidget.classList.add('music-playing');
+        } else {
+          cardWidget.classList.remove('music-playing');
+        }
+      }
+      if (cardIcon) cardIcon.textContent = active ? '❚❚' : '▶';
+    }
+
+    // Synchronize HTML5 audio element native state
+    if (bgAudio) {
+      bgAudio.addEventListener('play', () => updateMusicUI(true));
+      bgAudio.addEventListener('pause', () => {
+        if (!isWebAudioPlaying) updateMusicUI(false);
+      });
+      bgAudio.addEventListener('ended', () => {
+        bgAudio.currentTime = 0;
+        bgAudio.play().catch(() => {});
+      });
+    }
+
+    // Auto-unlock audio on very first user click/touch anywhere on the page
+    function initUserGestureUnlock() {
+      const unlockAudio = () => {
+        if (!isMusicPlaying) {
+          playMusic();
+        }
+        window.removeEventListener('click', unlockAudio);
+        window.removeEventListener('touchstart', unlockAudio);
+      };
+      window.addEventListener('click', unlockAudio, { passive: true, once: true });
+      window.addEventListener('touchstart', unlockAudio, { passive: true, once: true });
+    }
+
+    /* ------------------------------------------------------------
+       2. AMBIENT SPARKLES & FALLING PETALS GENERATION
+       ------------------------------------------------------------ */
+    function initSparkles() {
+      const container = document.getElementById('sparkleContainer');
+      const count = 35;
+
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'sparkle-dot';
+        const size = Math.random() * 4 + 2;
+        dot.style.width = size + 'px';
+        dot.style.height = size + 'px';
+        dot.style.left = Math.random() * 100 + '%';
+        dot.style.top = Math.random() * 100 + '%';
+        dot.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        dot.style.animationDelay = (Math.random() * 5) + 's';
+        container.appendChild(dot);
+      }
+    }
+
+    const petalSymbols = ['🌸', '💮', '🩷', '🤍', '🌷', '✨'];
+
+    function spawnPetal() {
+      const container = document.getElementById('flowerContainer');
+      const petal = document.createElement('div');
+      petal.className = 'falling-flower';
+      petal.textContent = petalSymbols[Math.floor(Math.random() * petalSymbols.length)];
+      petal.style.left = Math.random() * 98 + '%';
+      petal.style.fontSize = (Math.random() * 12 + 16) + 'px';
+      const duration = Math.random() * 6 + 6;
+      petal.style.animationDuration = duration + 's';
+
+      container.appendChild(petal);
+
+      setTimeout(() => {
+        if (petal && petal.parentNode) {
+          petal.parentNode.removeChild(petal);
+        }
+      }, duration * 1000);
+    }
+
+    function initPetals() {
+      setInterval(spawnPetal, 900);
+      for (let i = 0; i < 5; i++) {
+        setTimeout(spawnPetal, i * 200);
+      }
+    }
+
+    /* ------------------------------------------------------------
+       3. BURST FLOWER PETALS (Interactive Button & Celebrations)
+       ------------------------------------------------------------ */
+    function burstFlowerPetals(event) {
+      const originX = event ? event.clientX : window.innerWidth / 2;
+      const originY = event ? event.clientY : window.innerHeight / 2;
+      const burstCount = 28;
+
+      for (let i = 0; i < burstCount; i++) {
+        const el = document.createElement('div');
+        el.className = 'burst-flower';
+        el.textContent = petalSymbols[Math.floor(Math.random() * petalSymbols.length)];
+        el.style.left = originX + 'px';
+        el.style.top = originY + 'px';
+        el.style.fontSize = (Math.random() * 14 + 18) + 'px';
+
+        const angle = Math.random() * 2 * Math.PI;
+        const distance = Math.random() * 160 + 50;
+        const dx = Math.cos(angle) * distance + 'px';
+        const dy = (Math.sin(angle) * distance - 30) + 'px';
+        const rot = (Math.random() * 540 - 270) + 'deg';
+
+        el.style.setProperty('--dx', dx);
+        el.style.setProperty('--dy', dy);
+        el.style.setProperty('--rot', rot);
+
+        document.body.appendChild(el);
+
+        setTimeout(() => {
+          if (el && el.parentNode) {
+            el.parentNode.removeChild(el);
+          }
+        }, 1600);
+      }
+    }
+
+    /* ------------------------------------------------------------
+       4. ENVELOPE OPEN / CLOSE CONTROLLER
+       ------------------------------------------------------------ */
+    function openLetter(event) {
+      const envelope = document.getElementById('envelope');
+      const envelopeBox = document.getElementById('envelopeBox');
+      const cardContainer = document.getElementById('cardContainer');
+
+      // Add opened class to flip flap
+      envelope.classList.add('open');
+
+      // Play music immediately on opening the envelope
+      playMusic();
+
+      // Burst flowers on opening
+      burstFlowerPetals(event);
+
+      // Transition smoothly from envelope to letter card
+      setTimeout(() => {
+        envelopeBox.style.display = 'none';
+        cardContainer.classList.add('visible');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 700);
+    }
+
+    function closeLetter() {
+      const envelope = document.getElementById('envelope');
+      const envelopeBox = document.getElementById('envelopeBox');
+      const cardContainer = document.getElementById('cardContainer');
+
+      cardContainer.classList.remove('visible');
+      envelopeBox.style.display = 'flex';
+      envelope.classList.remove('open');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ------------------------------------------------------------
+       5. COPY LETTER TEXT TO CLIPBOARD
+       ------------------------------------------------------------ */
+    function copyLetterText() {
+      const title = "Apology to Keysha 🤍";
+      const messageEl = document.querySelector('.message-text');
+      const message = messageEl ? messageEl.innerText : `sayang, aku mau minta maaf yaa. maaf karena selama ini aku udah sering ngelanggar janji yang aku buat sendiri... aku sayang kamu, Keysha 🤍`;
+      const poeticNote = `"Seindah bunga lily merah muda dan megahnya istana kerajaan London, tak ada yang bisa menandingi ketulusan cintaku untukmu. Maafin aku ya cintaku... 🌸"`;
+      const signature = "from your boyfieee ♡";
+
+      const fullText = `${title}\n\n${message}\n\n${poeticNote}\n\n${signature}`;
+
+      navigator.clipboard.writeText(fullText).then(() => {
+        const copyBtnText = document.getElementById('copyBtnText');
+        copyBtnText.textContent = 'Tersalin! ✅';
+        showToast('Pesan surat tersalin ke clipboard 📋');
+
+        setTimeout(() => {
+          copyBtnText.textContent = 'Salin Pesan 🤍';
+        }, 2500);
+      }).catch(() => {
+        showToast('Gagal menyalin teks');
+      });
+    }
+
+    function showToast(text) {
+      const toast = document.getElementById('toastMsg');
+      toast.textContent = text;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+
+    /* ------------------------------------------------------------
+       INITIALIZE ON LOAD
+       ------------------------------------------------------------ */
+    window.addEventListener('DOMContentLoaded', () => {
+      initSparkles();
+      initPetals();
+      preloadSongBuffer();
+      initUserGestureUnlock();
+    });
+  </script>
+</body>
+</html>
