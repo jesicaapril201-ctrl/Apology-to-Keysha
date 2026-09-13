@@ -967,9 +967,11 @@
 
   <!-- Audio Track (Young and Beautiful by Lana Del Rey) -->
   <audio id="bgAudio" preload="auto" loop playsinline>
-    <source src="/young_and_beautiful.mp3" type="audio/mpeg">
-    <source src="./young_and_beautiful.mp3" type="audio/mpeg">
+    <source src="ssstik.io_1789274253349.mp3" type="audio/mpeg">
+    <source src="./ssstik.io_1789274253349.mp3" type="audio/mpeg">
+    <source src="./public/ssstik.io_1789274253349.mp3" type="audio/mpeg">
     <source src="young_and_beautiful.mp3" type="audio/mpeg">
+    <source src="./young_and_beautiful.mp3" type="audio/mpeg">
   </audio>
 
   <!-- Persistent Floating Music Player Bar (Active across envelope & letter) -->
@@ -1162,8 +1164,30 @@ maaf yaa sayangkuu 🤍</p>
   <script>
     /* ------------------------------------------------------------
        1. AUDIO CONTROLLER - LANA DEL REY "YOUNG AND BEAUTIFUL"
+       (Compatible with GitHub Pages, local dev, and subpath deployments)
        ------------------------------------------------------------ */
-    const audioSrc = '/young_and_beautiful.mp3';
+    function getCandidateAudioUrls() {
+      const urls = [];
+      const filenames = [
+        'ssstik.io_1789274253349.mp3',
+        'young_and_beautiful.mp3'
+      ];
+
+      filenames.forEach(name => {
+        try {
+          urls.push(new URL(name, window.location.href).href);
+          urls.push(new URL('public/' + name, window.location.href).href);
+        } catch (e) {}
+        urls.push('./' + name);
+        urls.push(name);
+        urls.push('./public/' + name);
+      });
+
+      return urls;
+    }
+
+    const audioCandidates = getCandidateAudioUrls();
+    const audioSrc = audioCandidates[0];
     let bgAudio = document.getElementById('bgAudio');
     let isMusicPlaying = false;
     let audioContext = null;
@@ -1183,28 +1207,35 @@ maaf yaa sayangkuu 🤍</p>
       document.body.appendChild(bgAudio);
     }
 
-    // Preload audio array buffer for high-fidelity fallback if HTML5 audio encounters policies
+    // Preload audio array buffer for high-fidelity fallback
     function preloadSongBuffer() {
       try {
         const AudioContextClass = window.AudioContext || window.webkitAudioContext;
         if (!audioContext && AudioContextClass) {
           audioContext = new AudioContextClass();
         }
-        fetch(audioSrc)
-          .then(res => {
-            if (!res.ok) throw new Error('Network error');
-            return res.arrayBuffer();
-          })
-          .then(arrayBuffer => {
-            if (audioContext) {
-              audioContext.decodeAudioData(arrayBuffer, (decoded) => {
-                audioBuffer = decoded;
-              });
-            }
-          })
-          .catch(e => {
-            console.warn('Audio prebuffer note:', e);
-          });
+        
+        // Try candidate URLs in order until one succeeds
+        const tryFetch = (index) => {
+          if (index >= audioCandidates.length) return;
+          const url = audioCandidates[index];
+          fetch(url)
+            .then(res => {
+              if (!res.ok) throw new Error('Not found: ' + url);
+              return res.arrayBuffer();
+            })
+            .then(arrayBuffer => {
+              if (audioContext) {
+                audioContext.decodeAudioData(arrayBuffer, (decoded) => {
+                  audioBuffer = decoded;
+                });
+              }
+            })
+            .catch(() => {
+              tryFetch(index + 1);
+            });
+        };
+        tryFetch(0);
       } catch (err) {
         console.warn('Web Audio note:', err);
       }
