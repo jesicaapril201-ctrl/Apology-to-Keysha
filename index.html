@@ -965,13 +965,11 @@
   <!-- Falling Lily & Flower Petals Container -->
   <div class="flower-container" id="flowerContainer"></div>
 
-  <!-- Audio Track (Young and Beautiful by Lana Del Rey) -->
+  <!-- Audio Track (ssstik.io_1789274253349.mp3) -->
   <audio id="bgAudio" preload="auto" loop playsinline>
     <source src="ssstik.io_1789274253349.mp3" type="audio/mpeg">
     <source src="./ssstik.io_1789274253349.mp3" type="audio/mpeg">
     <source src="./public/ssstik.io_1789274253349.mp3" type="audio/mpeg">
-    <source src="young_and_beautiful.mp3" type="audio/mpeg">
-    <source src="./young_and_beautiful.mp3" type="audio/mpeg">
   </audio>
 
   <!-- Persistent Floating Music Player Bar (Active across envelope & letter) -->
@@ -1168,20 +1166,15 @@ maaf yaa sayangkuu 🤍</p>
        ------------------------------------------------------------ */
     function getCandidateAudioUrls() {
       const urls = [];
-      const filenames = [
-        'ssstik.io_1789274253349.mp3',
-        'young_and_beautiful.mp3'
-      ];
+      const musicFile = 'ssstik.io_1789274253349.mp3';
 
-      filenames.forEach(name => {
-        try {
-          urls.push(new URL(name, window.location.href).href);
-          urls.push(new URL('public/' + name, window.location.href).href);
-        } catch (e) {}
-        urls.push('./' + name);
-        urls.push(name);
-        urls.push('./public/' + name);
-      });
+      try {
+        urls.push(new URL(musicFile, window.location.href).href);
+        urls.push(new URL('public/' + musicFile, window.location.href).href);
+      } catch (e) {}
+      urls.push('./' + musicFile);
+      urls.push(musicFile);
+      urls.push('./public/' + musicFile);
 
       return urls;
     }
